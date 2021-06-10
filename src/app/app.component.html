@@ -1,0 +1,46 @@
+<h1>{{title}}</h1>
+<p>
+  Este crud simula el agregado de inventario de ropa
+</p>
+
+<table border="1">
+  <thead>
+    <th>Id</th>
+    <th>Nombre</th>
+    <th>Precio</th>
+    <th>Borrar</th>
+    <th>Seleccionar</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let articulos of inventario">
+      <td> {{ articulos.id }} </td>
+      <td> {{ articulos.nombre }} </td>
+      <td> {{ articulos.precio }} </td>
+      <td>
+        <button (click)="eliminar(articulos.id)">Borrar</button>
+      </td>
+      <td>
+        <button (click)="Seleccionar(articulos)">Seleccionar</button>
+      </td>
+
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+<p>
+  <label for="id">Id</label>
+  <input type="number" [(ngModel)]="formulario.id" >
+</p>
+<p>
+  <label for="Nombre">Nombre</label>
+  <input type="text" [(ngModel)]="formulario.nombre">
+</p>
+<p>
+  <label for="Precio">Precio</label>
+  <input type="number" [(ngModel)]="formulario.precio">
+</p>
+
+<button (click)="agregar">Agregar</button>
+<button (click)="editar()">Editar</button>
+
